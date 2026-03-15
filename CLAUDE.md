@@ -18,11 +18,25 @@ public/images/bouquet.jpg
 
 La imagen debe ser cuadrada, fondo blanco, formato JPG o WEBP. Se renderiza a 540×540px en el hero.
 
+## Video con scroll (ScrollVideo)
+
+Coloca el video en:
+
+```
+public/videos/arrangement.mp4
+```
+
+- Formato recomendado: MP4 (H.264) o WEBM para mejor compatibilidad
+- El scroll del usuario controla el `currentTime` del video — no hay autoplay ni controles
+- `scrollHeight="300vh"` en `page.tsx` controla la "velocidad" del scrub: más altura = más lento
+- El video aparece entre las secciones Philosophy y Composition
+- Para videos > 50MB, considera moverlo a Vercel Blob y cambiar `src` por la URL del blob
+
 ## Animaciones
 
 | Keyframe          | Uso                                      |
 |-------------------|------------------------------------------|
-| `float-gentle`    | Ramo flotando (wrapper exterior)         |
+| `float-gentle`    | Ramo flotando (wrapper exterior)          |
 | `breathe-scale`   | Ramo respirando (wrapper interior)       |
 | `glow-pulse`      | Halo de luz detrás del ramo              |
 | `shimmer-ring`    | Anillos concéntricos pulsantes           |
