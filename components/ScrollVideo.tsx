@@ -94,7 +94,7 @@ export default function ScrollVideo({
       });
 
       // Progress bar
-      const bar = container.querySelector<HTMLDivElement>("[data-progress-bar]");
+      const bar = container?.querySelector<HTMLDivElement>("[data-progress-bar]");
       if (bar) bar.style.width = `${getProgress() * 100}%`;
     }
 
