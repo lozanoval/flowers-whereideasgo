@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+@theme {
+  --color-hydrangea: #7b9fd4;
+  --color-hydrangea-light: #a8c4e8;
+  --color-hydrangea-pale: #d6e5f5;
+  --color-hydrangea-deep: #3a5a8a;
+  --color-ivory: #f8f5ef;
+  --color-cream: #fafaf7;
+  --color-sage: #b8c4bb;
+  --color-sage-dark: #7a9490;
+  --color-parchment: #f0ebe3;
+  --color-charcoal: #2c2c2c;
+  --color-charcoal-soft: #4a4a4a;
+
+  --font-family-display: var(--font-cormorant), "Georgia", serif;
+  --font-family-body: var(--font-josefin), "Helvetica Neue", sans-serif;
+}
+
+/* ─── Keyframes ──────────────────────────────────────────────────────────── */
+
+@keyframes float-gentle {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-0.15deg);
+  }
+  28% {
+    transform: translateY(-16px) rotate(0.3deg);
+  }
+  58% {
+    transform: translateY(-9px) rotate(-0.1deg);
+  }
+  80% {
+    transform: translateY(-21px) rotate(0.2deg);
+  }
+}
+
+@keyframes breathe-scale {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.018);
+    filter: brightness(1.025);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+@keyframes shimmer-ring {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  50% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(1.04);
+  }
+}
+
+@keyframes bokeh-float {
+  0% {
+    transform: translateY(10px) translateX(0);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-220px) translateX(var(--bokeh-drift, 30px));
+    opacity: 0;
+  }
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translateY(-80px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.65;
+  }
+  92% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(110vh) translateX(var(--petal-drift, 80px))
+      rotate(var(--petal-spin, 500deg));
+    opacity: 0;
+  }
+}
+
+@keyframes letter-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes line-grow-x {
+  from {
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+}
+
+@keyframes scroll-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+@keyframes aura-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fafaf7;
+  color: #2c2c2c;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #7b9fd4;
+  color: #ffffff;
+}
+
+/* ─── Utility classes for animation states ───────────────────────────────── */
+
+.animate-float {
+  animation: float-gentle 13s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe-scale 7s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow-pulse 10s ease-in-out infinite;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
