@@ -76,7 +76,7 @@ const videoChapters: Chapter[] = [
 export default function FlowersPage() {
   return (
     <main
-      className="relative overflow-x-hidden"
+      className="relative"
       style={{ fontFamily: BODY, backgroundColor: "#0A0A08" }}
     >
       {/* Petals — behind everything */}
