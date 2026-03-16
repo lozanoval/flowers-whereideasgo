@@ -1,7 +1,7 @@
 import FloatingPetals from "@/components/FloatingPetals";
 import ScrollReveal from "@/components/ScrollReveal";
-import ScrollVideo from "@/components/ScrollVideo";
-import type { Chapter } from "@/components/ScrollVideo";
+import CanvasVideo from "@/components/CanvasVideo";
+import type { Chapter } from "@/components/CanvasVideo";
 
 const DISPLAY = 'var(--font-cormorant), "Georgia", serif';
 const BODY = 'var(--font-josefin), "Helvetica Neue", sans-serif';
@@ -85,8 +85,10 @@ export default function FlowersPage() {
       {/* ══════════════════════════════════════════════════════════════════
           SCROLL VIDEO — full-page cinematic experience
       ══════════════════════════════════════════════════════════════════ */}
-      <ScrollVideo
-        src="/flowers/videos/flowersvideo.mp4"
+      <CanvasVideo
+        frameCount={120}
+        framesPath="/flowers/frames/frame_"
+        frameExt="webp"
         scrollHeight="500vh"
         chapters={videoChapters}
         reversed={true}
