@@ -89,7 +89,7 @@ export default function FlowersPage() {
         src="/flowers/videos/flowersvideo.mp4"
         scrollHeight="500vh"
         chapters={videoChapters}
-        reversed={false}
+        reversed={true}
       />
 
       {/* ══════════════════════════════════════════════════════════════════
